@@ -1,0 +1,19 @@
+name : "laravel automate test runner"
+
+on:[push, pull_request]
+
+jobs:
+  laravel-test:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: "Checkout code"
+        - uses: actions/checkout@v2
+
+        - name: "Setup PHP"
+        - uses: "shivammathur/setup-php@v2"
+           with :
+              php-version: "8.2"
+              extensions: mbstring, bcmath, pdo_mysql
+              ini-values: post_max_size=256M, upload_max_filesize=256M, memory_limit=512M
+              coverage: xdebug
