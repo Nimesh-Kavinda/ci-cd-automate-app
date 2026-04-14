@@ -8,13 +8,14 @@ jobs:
 
     steps:
         - name: "Checkout code"
-        - uses: actions/checkout@v2
+          uses: actions/checkout@v2
 
         - name: "Setup PHP"
-        - uses: "shivammathur/setup-php@v2"
-           with:
+          uses: "shivammathur/setup-php@v2"
+          with:
               php-version: "8.2"
               extensions: mbstring, bcmath, pdo_mysql
 
         - name: "Config env file"
-        - uses: php - r "file_exists('.env') || copy('.env.example', '.env');"
+          run: php - r "file_exists('.env') || copy('.env.example', '.env');"
+
