@@ -1,6 +1,6 @@
 name : "laravel automate test runner"
 
-on:[push, pull_request]
+on: [push, pull_request]
 
 jobs:
   laravel-test:
